@@ -12,7 +12,7 @@ export default function Tab({
   return (
     <button
       onClick={() => handleTabClick(tab)}
-      className={`flex flex-1 h-[44px] items-center justify-center ${currentTab === tab ? 'font-bold border-b-2 border-b-black-default' : 'border-b'} text-lg`}
+      className={`flex flex-1 h-[44px] items-center justify-center ${currentTab === tab ? 'font-bold border-b-[3px] border-b-black-default' : 'border-b'} text-lg`}
     >
       {tab}
     </button>
