@@ -11,7 +11,7 @@ export default function HomaNavigation() {
     setCurrentTab(tab);
   };
   return (
-    <nav className="flex justify-between">
+    <nav className="flex justify-between mx-[13px]">
       {TAB_LIST.map((tab) => (
         <Tab key={tab} tab={tab} handleTabClick={handleTabClick} currentTab={currentTab} />
       ))}
