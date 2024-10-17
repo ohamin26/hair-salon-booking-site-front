@@ -3,12 +3,6 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
-      minWidth: {
-        '320': '320px',
-      },
-      maxWidth: {
-        '640': '640px',
-      },
       fontFamily: {
         pretendard: ['Pretendard'],
       },

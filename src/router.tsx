@@ -1,17 +1,21 @@
 import { createBrowserRouter } from 'react-router-dom';
-import App from '@/App.tsx';
+import Home from './pages/Home';
 import { Test } from './test';
 
-type routeElement = {
+type RouteElement = {
   path: string;
   element: React.ReactNode;
   errorElement?: React.ReactNode;
   children?: { path: string; element: React.ReactNode }[];
 };
 
-const routes: routeElement[] = [
+const routes: RouteElement[] = [
   {
     path: '/',
+    element: <Home />,
+  },
+  {
+    path: '/test',
     element: <Test />,
   },
 ];
