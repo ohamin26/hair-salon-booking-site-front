@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import App from '@/App.tsx';
+import { Test } from './test';
 
 type routeElement = {
   path: string;
@@ -11,7 +12,7 @@ type routeElement = {
 const routes: routeElement[] = [
   {
     path: '/',
-    element: <App />,
+    element: <Test />,
   },
 ];
 

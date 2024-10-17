@@ -6,6 +6,15 @@ export default {
       fontFamily: {
         pretendard: ['Pretendard'],
       },
+      maxWidth: {
+        default: '640px',
+      },
+      minWidth: {
+        default: '320px',
+      },
+      fontSize: {
+        menuTilte: '17px',
+      },
       colors: {
         purple: {
           '100': '#9664ff',
