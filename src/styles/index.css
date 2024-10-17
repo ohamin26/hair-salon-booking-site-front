@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Pretendard';
+  src: url('@/public/fonts/Pretendard-Regular.woff2') format('woff2');
+}
+
+@layer base {
+  body {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    line-height: 1.5;
+    font-size: 14px;
+    color: '#111';
+    height: 100%;
+    background: '#fff';
+    margin: 0;
+    padding: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  background: '#inherit';
+}
+
+::-webkit-scrollbar-thumb {
+  width: 4px;
+  background: '#aaa';
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: '#888';
+}
