@@ -6,7 +6,7 @@ import { useParams } from 'react-router-dom';
 
 export const MenuBottomSheet = () => {
   const { id } = useParams<{ id: string }>();
-  const [snapPoint, setSnapPoint] = useState(1.5);
+  const [snapPoint, setSnapPoint] = useState(1.7);
   const [scrollDelta, setScrollDelta] = useState(0);
   const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
 
@@ -26,23 +26,23 @@ export const MenuBottomSheet = () => {
 
     if (scrollDirection === 'down') {
       if (scrollDelta >= 100 && scrollDelta < 200) {
-        setSnapPoint(1.3);
+        setSnapPoint(1.5);
       } else if (scrollDelta >= 200 && scrollDelta < 300) {
         setSnapPoint(1.1);
       } else if (scrollDelta >= 300) {
         setSnapPoint(1);
       } else if (scrollDelta < 100) {
-        setSnapPoint(1.5);
+        setSnapPoint(1.7);
       }
     } else if (scrollDirection === 'up') {
       if (scrollDelta >= 100 && scrollDelta < 200) {
-        setSnapPoint(1.3);
+        setSnapPoint(1.5);
       } else if (scrollDelta >= 200 && scrollDelta < 300) {
         setSnapPoint(1.1);
       } else if (scrollDelta >= 300) {
         setSnapPoint(1);
       } else if (scrollDelta < 100) {
-        setSnapPoint(1.5);
+        setSnapPoint(1.7);
       }
     }
 

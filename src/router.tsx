@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import { Test } from './test';
-import { Menu } from '@/pages/menuDetails/menu.tsx';
+import { MenuDetail } from './pages/MenuDetail';
 
 type RouteElement = {
   path: string;
@@ -21,11 +21,11 @@ const routes: RouteElement[] = [
   },
   {
     path: '/:id',
-    element: <Menu />,
+    element: <MenuDetail />,
     children: [
       {
         path: 'product',
-        element: <Menu />,
+        element: <MenuDetail />,
       },
     ],
   },
