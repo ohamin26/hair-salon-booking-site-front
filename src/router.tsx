@@ -1,6 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
-import { Test } from './test';
 import { MenuDetail } from './pages/MenuDetail';
 
 type RouteElement = {
@@ -14,10 +13,6 @@ const routes: RouteElement[] = [
   {
     path: '/',
     element: <Home />,
-  },
-  {
-    path: '/test',
-    element: <Test />,
   },
   {
     path: '/:id',
