@@ -1,13 +1,18 @@
 import { useEffect, useState } from 'react';
 import { BottomSheet } from 'react-spring-bottom-sheet';
+import { useSpring } from '@react-spring/web';
 import '@/styles/bottom-sheet-style.css';
 import { MenuHeader } from '@/components/Hearder/MemuHeader';
 import { useParams } from 'react-router-dom';
 
 export const MenuBottomSheet = () => {
   const { id } = useParams<{ id: string }>();
-  const [snapPoint, setSnapPoint] = useState(1.7);
   const [scrollDelta, setScrollDelta] = useState(0);
+
+  const [springs, api] = useSpring(() => ({
+    snapPoint: 1.7,
+    config: { tension: 170, friction: 26 },
+  }));
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
@@ -19,25 +24,25 @@ export const MenuBottomSheet = () => {
     window.addEventListener('wheel', handleScroll);
 
     if (scrollDelta >= 100 && scrollDelta < 200) {
-      setSnapPoint(1.5);
+      api.start({ snapPoint: 1.5 });
     } else if (scrollDelta >= 200 && scrollDelta < 300) {
-      setSnapPoint(1.1);
+      api.start({ snapPoint: 1.1 });
     } else if (scrollDelta >= 300) {
-      setSnapPoint(1);
+      api.start({ snapPoint: 1 });
     } else if (scrollDelta < 100) {
-      setSnapPoint(1.7);
+      api.start({ snapPoint: 1.7 });
     }
 
     return () => {
       window.removeEventListener('wheel', handleScroll);
     };
-  }, [scrollDelta]);
+  }, [scrollDelta, api]);
 
   return (
     <BottomSheet
       open
       snapPoints={({ maxHeight }) => {
-        return [maxHeight / snapPoint];
+        return [maxHeight / springs.snapPoint.get()];
       }}
       blocking={false}
       initialFocusRef={false}
