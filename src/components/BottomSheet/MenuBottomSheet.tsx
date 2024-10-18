@@ -24,9 +24,9 @@ export const MenuBottomSheet = () => {
     window.addEventListener('wheel', handleScroll);
 
     if (scrollDelta >= 100 && scrollDelta < 200) {
-      api.start({ snapPoint: 1.5 });
+      api.start({ snapPoint: 1.4 });
     } else if (scrollDelta >= 200 && scrollDelta < 300) {
-      api.start({ snapPoint: 1.1 });
+      api.start({ snapPoint: 1.2 });
     } else if (scrollDelta >= 300) {
       api.start({ snapPoint: 1 });
     } else if (scrollDelta < 100) {
