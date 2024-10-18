@@ -8,42 +8,24 @@ export const MenuBottomSheet = () => {
   const { id } = useParams<{ id: string }>();
   const [snapPoint, setSnapPoint] = useState(1.7);
   const [scrollDelta, setScrollDelta] = useState(0);
-  const [scrollDirection, setScrollDirection] = useState<'up' | 'down' | null>(null);
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
     if (scrollDelta > 300) setScrollDelta(300);
     if (scrollDelta < -300) setScrollDelta(-300);
-    if (event.deltaY > 0) {
-      setScrollDirection('down');
-    } else if (event.deltaY < 0) {
-      setScrollDirection('up');
-    }
   };
 
   useEffect(() => {
     window.addEventListener('wheel', handleScroll);
 
-    if (scrollDirection === 'down') {
-      if (scrollDelta >= 100 && scrollDelta < 200) {
-        setSnapPoint(1.5);
-      } else if (scrollDelta >= 200 && scrollDelta < 300) {
-        setSnapPoint(1.1);
-      } else if (scrollDelta >= 300) {
-        setSnapPoint(1);
-      } else if (scrollDelta < 100) {
-        setSnapPoint(1.7);
-      }
-    } else if (scrollDirection === 'up') {
-      if (scrollDelta >= 100 && scrollDelta < 200) {
-        setSnapPoint(1.5);
-      } else if (scrollDelta >= 200 && scrollDelta < 300) {
-        setSnapPoint(1.1);
-      } else if (scrollDelta >= 300) {
-        setSnapPoint(1);
-      } else if (scrollDelta < 100) {
-        setSnapPoint(1.7);
-      }
+    if (scrollDelta >= 100 && scrollDelta < 200) {
+      setSnapPoint(1.5);
+    } else if (scrollDelta >= 200 && scrollDelta < 300) {
+      setSnapPoint(1.1);
+    } else if (scrollDelta >= 300) {
+      setSnapPoint(1);
+    } else if (scrollDelta < 100) {
+      setSnapPoint(1.7);
     }
 
     return () => {
