@@ -13,7 +13,7 @@ export default {
         default: '320px',
       },
       fontSize: {
-        menuTilte: '17px',
+        menuTilte: '20px',
       },
       colors: {
         purple: {
