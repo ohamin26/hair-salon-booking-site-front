@@ -22,7 +22,7 @@ export const MenuHeader = ({ reviewCount, id }: MenuHeaderProps) => {
     );
   };
   return (
-    <header className="text-menuTilte max-w-default min-w-default block h-12 w-[320px] items-start justify-start bg-white p-4 font-thin text-gray-500">
+    <header className="bg-white block h-12 w-[640px] min-w-default max-w-default items-start justify-start p-4 text-menuTilte font-thin text-gray-500">
       <div className="space-x-4">
         <LinkMenu to={`${id}`}>
           <span>홈</span>

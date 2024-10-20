@@ -8,7 +8,7 @@ import { CustomImg } from '../Image/CustomImg';
 
 export const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [imgWidth, imgHeight] = ['640', '430'];
+  const [imgWidth, imgHeight] = ['640', '380'];
   const settings = {
     dots: true,
     infinite: false,

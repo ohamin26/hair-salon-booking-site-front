@@ -5,36 +5,39 @@ import '@/styles/bottom-sheet-style.css';
 import { MenuHeader } from '@/components/Hearder/MemuHeader';
 import { useParams } from 'react-router-dom';
 import { Content } from './Content';
+import { getSnapPoint } from '@/utils/getSnapPoint';
 
 export const Container = () => {
   const { id } = useParams<{ id: string }>();
   const [scrollDelta, setScrollDelta] = useState(0);
-
   const [springs, api] = useSpring(() => ({
     snapPoint: 1.7,
     config: { tension: 170, friction: 26 },
   }));
+  const [isActiveScroll, setIsActiveScroll] = useState(false);
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
+    if (scrollDelta >= 300) setIsActiveScroll(true);
+    else setIsActiveScroll(false);
     if (scrollDelta > 300) setScrollDelta(300);
-    if (scrollDelta < -300) setScrollDelta(-300);
+    if (scrollDelta < 0) setScrollDelta(0);
   };
 
   useEffect(() => {
+    const handleSnapPoint = () => {
+      const screenWidth = window.innerWidth;
+      const snapPoint = getSnapPoint(scrollDelta, screenWidth);
+      api.start({ snapPoint });
+    };
+
+    window.addEventListener('resize', handleSnapPoint);
     window.addEventListener('wheel', handleScroll);
 
-    if (scrollDelta >= 100 && scrollDelta < 200) {
-      api.start({ snapPoint: 1.4 });
-    } else if (scrollDelta >= 200 && scrollDelta < 300) {
-      api.start({ snapPoint: 1.2 });
-    } else if (scrollDelta >= 300) {
-      api.start({ snapPoint: 1 });
-    } else if (scrollDelta < 100) {
-      api.start({ snapPoint: 1.7 });
-    }
+    handleSnapPoint();
 
     return () => {
+      window.removeEventListener('resize', handleSnapPoint);
       window.removeEventListener('wheel', handleScroll);
     };
   }, [scrollDelta, api]);
@@ -49,8 +52,15 @@ export const Container = () => {
       initialFocusRef={false}
       expandOnContentDrag={false}
     >
-      <MenuHeader reviewCount={10} id={id} />
-      <Content />
+      <div className="overflow-hidden">
+        <div>{'화면 보호기'}</div>
+        <div className="fixed top-3 z-10">
+          <MenuHeader reviewCount={10} id={id} />
+        </div>
+        <div className={`${!isActiveScroll && 'fixed w-full'}`}>
+          <Content />
+        </div>
+      </div>
     </BottomSheet>
   );
 };

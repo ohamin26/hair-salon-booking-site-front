@@ -22,7 +22,7 @@ export const Content = () => {
   };
 
   return (
-    <div className="bg-white mx-auto max-w-default rounded-lg p-6">
+    <div className="bg-white mx-auto mt-7 h-full max-w-default rounded-lg p-6">
       <div className="flex flex-col items-start">
         <h1 className="text-xl font-bold">{storeName}</h1>
         <div className="flex items-center space-x-1 text-purple-500">
