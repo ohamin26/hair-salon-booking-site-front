@@ -9,22 +9,16 @@ import {
   storeInfo,
   likeCount,
 } from '@/mocks/HairshopDetailData.js';
-type MenuProps = {
-  width: string;
-  height: string;
-  text: string;
-  src: string;
-};
+import { useState } from 'react';
+import { Tap } from './Tap';
+import { TextBox } from './TextBox';
 
 export const Content = () => {
   const [imgWidth, imgHeight] = ['30', '30'];
-  const Menu = ({ width, height, text, src }: MenuProps) => {
-    return (
-      <button type="button" className="flex flex-col items-center p-11 py-4">
-        <CustomImg src={src} height={height} width={width} />
-        <span>{text}</span>
-      </button>
-    );
+  const [isExpanded, setIsExpanded] = useState({ notice: false, storeInfo: false });
+
+  const handleToggle = (key: string) => {
+    setIsExpanded((prev) => ({ ...prev, [key]: true }));
   };
 
   return (
@@ -40,7 +34,7 @@ export const Content = () => {
       <div className="border-black mt-4 bg-white-default p-4">
         <h2 className="w-fit bg-black-default pl-2 pr-8 text-sm font-bold text-white-default">Notice</h2>
         <p className="mt-1 text-sm text-gray-700">{noticeText}</p>
-        <p className="text-xs text-gray-500">{noticeDetails}</p>
+        <TextBox info={noticeDetails} isOpen={isExpanded.notice} onClick={() => handleToggle('notice')} />
       </div>
 
       <div className="mt-4 flex items-center space-x-2">
@@ -48,13 +42,13 @@ export const Content = () => {
         <span className="text-sm text-gray-500">{businessHours}</span>
       </div>
 
-      <div className="mt-4 text-sm text-gray-600">{storeInfo}</div>
+      <TextBox info={storeInfo} isOpen={isExpanded.storeInfo} onClick={() => handleToggle('storeInfo')} />
 
       <div className="mt-4 flex items-center justify-between text-gray-600">
-        <Menu width={imgWidth} height={imgHeight} text={likeCount} src="/assets/images/icons/icon-like.svg" />
-        <Menu width="25" height="23" text="위치" src="/assets/images/icons/icon-location.svg" />
-        <Menu width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
-        <Menu width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />
+        <Tap width={imgWidth} height={imgHeight} text={likeCount} src="/assets/images/icons/icon-like.svg" />
+        <Tap width="25" height="23" text="위치" src="/assets/images/icons/icon-location.svg" />
+        <Tap width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
+        <Tap width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />
       </div>
     </div>
   );
