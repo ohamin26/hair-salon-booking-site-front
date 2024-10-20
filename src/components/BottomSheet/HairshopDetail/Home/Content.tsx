@@ -1,4 +1,4 @@
-import { CustomImg } from '../../Image/CustomImg';
+import { CustomImg } from '@/components/Image/CustomImg';
 import {
   storeName,
   rating,
@@ -7,6 +7,7 @@ import {
   businessStatus,
   businessHours,
   storeInfo,
+  likeCount,
 } from '@/mocks/HairshopDetailData.js';
 type MenuProps = {
   width: string;
@@ -19,10 +20,10 @@ export const Content = () => {
   const [imgWidth, imgHeight] = ['30', '30'];
   const Menu = ({ width, height, text, src }: MenuProps) => {
     return (
-      <div className="flex flex-col items-center p-11 py-4">
+      <button type="button" className="flex flex-col items-center p-11 py-4">
         <CustomImg src={src} height={height} width={width} />
         <span>{text}</span>
-      </div>
+      </button>
     );
   };
 
@@ -32,7 +33,7 @@ export const Content = () => {
         <h1 className="text-xl font-bold">{storeName}</h1>
         <div className="flex items-center space-x-1 text-purple-500">
           <CustomImg src="/assets/images/icons/icon-star.webp" height={'20'} width={'20'} />
-          <span>{rating}</span>
+          <span>{`${rating} / 5`}</span>
         </div>
       </div>
 
@@ -50,7 +51,7 @@ export const Content = () => {
       <div className="mt-4 text-sm text-gray-600">{storeInfo}</div>
 
       <div className="mt-4 flex items-center justify-between text-gray-600">
-        <Menu width={imgWidth} height={imgHeight} text="15" src="/assets/images/icons/icon-like.svg" />
+        <Menu width={imgWidth} height={imgHeight} text={likeCount} src="/assets/images/icons/icon-like.svg" />
         <Menu width="25" height="23" text="위치" src="/assets/images/icons/icon-location.svg" />
         <Menu width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
         <Menu width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />

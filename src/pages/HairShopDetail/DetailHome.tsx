@@ -1,5 +1,5 @@
 import { Carousel } from '@/components/Carousel/Carousel';
-import { Container } from '@/components/BottomSheet/HairshopDetailHome/Container';
+import { Container } from '@/components/BottomSheet/HairshopDetail/Home/Container';
 
 export const DetailHome = () => {
   return (
