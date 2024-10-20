@@ -5,7 +5,7 @@ import '@/styles/bottom-sheet-style.css';
 import { MenuHeader } from '@/components/Hearder/MemuHeader';
 import { useParams } from 'react-router-dom';
 
-export const MenuBottomSheet = () => {
+export const Container = () => {
   const { id } = useParams<{ id: string }>();
   const [scrollDelta, setScrollDelta] = useState(0);
 
