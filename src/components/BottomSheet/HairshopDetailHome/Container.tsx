@@ -4,6 +4,7 @@ import { useSpring } from '@react-spring/web';
 import '@/styles/bottom-sheet-style.css';
 import { MenuHeader } from '@/components/Hearder/MemuHeader';
 import { useParams } from 'react-router-dom';
+import { Content } from './Content';
 
 export const Container = () => {
   const { id } = useParams<{ id: string }>();
@@ -49,6 +50,7 @@ export const Container = () => {
       expandOnContentDrag={false}
     >
       <MenuHeader reviewCount={10} id={id} />
+      <Content />
     </BottomSheet>
   );
 };

@@ -4,14 +4,11 @@ import Slider from 'react-slick';
 import { useState } from 'react';
 import { PrevArrow } from '@/components/Button/Carousel/PrevArrow';
 import { NextArrow } from '@/components/Button/Carousel/NextArrow';
-
-type ImgProps = {
-  src: string;
-};
+import { CustomImg } from '../Image/CustomImg';
 
 export const Carousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const [imgWidth, imgHeight] = ['640', '430'];
   const settings = {
     dots: true,
     infinite: false,
@@ -32,20 +29,12 @@ export const Carousel = () => {
     },
   };
 
-  const CustomImg = ({ src }: ImgProps) => {
-    return (
-      <div>
-        <img className="h-[430px] w-[640px]" src={src} alt="carousel" />
-      </div>
-    );
-  };
-
   return (
     <Slider {...settings}>
-      <CustomImg src="https://picsum.photos/320/320" />
-      <CustomImg src="https://picsum.photos/320/320" />
-      <CustomImg src="https://picsum.photos/320/320" />
-      <CustomImg src="https://picsum.photos/320/320" />
+      <CustomImg src="https://picsum.photos/320/320" height={imgHeight} width={imgWidth} />
+      <CustomImg src="https://picsum.photos/320/320" height={imgHeight} width={imgWidth} />
+      <CustomImg src="https://picsum.photos/320/320" height={imgHeight} width={imgWidth} />
+      <CustomImg src="https://picsum.photos/320/320" height={imgHeight} width={imgWidth} />
     </Slider>
   );
 };
