@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
-import { MenuDetail } from './pages/MenuDetail';
+import { DetailHome } from './pages/HairShopDetail/DetailHome';
 
 type RouteElement = {
   path: string;
@@ -16,11 +16,11 @@ const routes: RouteElement[] = [
   },
   {
     path: '/:id',
-    element: <MenuDetail />,
+    element: <DetailHome />,
     children: [
       {
         path: 'product',
-        element: <MenuDetail />,
+        element: <DetailHome />,
       },
     ],
   },

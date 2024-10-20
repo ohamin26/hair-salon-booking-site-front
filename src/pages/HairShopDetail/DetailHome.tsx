@@ -1,7 +1,7 @@
 import { MenuBottomSheet } from '@/components/BottomSheet/MenuBottomSheet';
 import { Carousel } from '@/components/Carousel/Carousel';
 
-export const MenuDetail = () => {
+export const DetailHome = () => {
   return (
     <div className="max-w-default">
       <Carousel />
