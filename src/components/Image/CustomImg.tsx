@@ -1,13 +1,16 @@
+import { twMerge } from 'tailwind-merge';
+
 type ImgProps = {
   src: string;
   height: string;
   width: string;
+  addClassName?: string;
 };
 
-export const CustomImg = ({ src, height, width }: ImgProps) => {
+export const CustomImg = ({ src, height, width, addClassName }: ImgProps) => {
   return (
     <div>
-      <img className={`h-[${height}px] w-[${width}px]`} src={src} alt="carousel" />
+      <img className={twMerge(`h-[${height}px] w-[${width}px] ${addClassName}`)} src={src} />
     </div>
   );
 };

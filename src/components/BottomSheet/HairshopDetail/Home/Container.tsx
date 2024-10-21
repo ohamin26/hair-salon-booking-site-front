@@ -6,6 +6,7 @@ import { MenuHeader } from '@/components/Hearder/MemuHeader';
 import { useParams } from 'react-router-dom';
 import { Content } from './Content';
 import { getSnapPoint } from '@/utils/getSnapPoint';
+import { PickMenu } from '@/components/PickMenu/PickMenu';
 
 export const Container = () => {
   const { id } = useParams<{ id: string }>();
@@ -59,6 +60,7 @@ export const Container = () => {
         </div>
         <div className={`${!isActiveScroll && 'fixed w-full'}`}>
           <Content />
+          <PickMenu />
         </div>
       </div>
     </BottomSheet>
