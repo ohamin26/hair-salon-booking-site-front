@@ -31,7 +31,7 @@ export const Content = () => {
         </div>
       </div>
 
-      <div className="border-black mt-4 bg-white-default p-4">
+      <div className="mt-4 border border-gray-100 bg-[fff] p-4 shadow-md">
         <h2 className="w-fit bg-black-default pl-2 pr-8 text-sm font-bold text-white-default">Notice</h2>
         <p className="mt-1 text-sm text-gray-700">{noticeText}</p>
         <TextBox info={noticeDetails} isOpen={isExpanded.notice} onClick={() => handleToggle('notice')} />
