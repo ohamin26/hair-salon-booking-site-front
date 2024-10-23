@@ -7,35 +7,35 @@ const designers = [
     expertise: '[김마리금웨이브펌/레이어드펌전문] (7년)',
     likes: 12,
     comments: 33,
-    imgUrl: 'https://picsum.photos/320/320', // Replace with actual image URLs
+    imgUrl: 'https://picsum.photos/320/320',
   },
   {
     name: '수석 스타일리스트 은서',
     expertise: '[퍼스널 컬러리스트/디자인컬러 전문] (8년)',
     likes: 4,
     comments: 161,
-    imgUrl: 'https://picsum.photos/320/320', // Replace with actual image URLs
+    imgUrl: 'https://picsum.photos/320/320',
   },
   {
     name: '수석 스타일리스트 호성',
     expertise: '[여신레이어드펌/맨즈 아이롱펌 전문] (7년)',
     likes: 51,
     comments: 51,
-    imgUrl: 'https://picsum.photos/320/320', // Replace with actual image URLs
+    imgUrl: 'https://picsum.photos/320/320',
   },
   {
     name: '팀장 기용',
     expertise: '[맨즈 아이롱펌/볼륨매직 전문 디렉터] (7년)',
     likes: 22,
     comments: 293,
-    imgUrl: 'https://picsum.photos/320/320', // Replace with actual image URLs
+    imgUrl: 'https://picsum.photos/320/320',
   },
   {
     name: '실장 유준',
     expertise: '[허쉬펌/복구펌 전문헤어 디렉터] (9년)',
     likes: 11,
     comments: 1,
-    imgUrl: 'https://picsum.photos/320/320', // Replace with actual image URLs
+    imgUrl: 'https://picsum.photos/320/320',
   },
 ];
 

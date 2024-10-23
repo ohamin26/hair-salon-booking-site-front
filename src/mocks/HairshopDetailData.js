@@ -59,3 +59,29 @@ const MenuData = [
 ];
 
 export const menuData = MenuData;
+
+const reviewsData = [
+  {
+    title: '[오픈특가] 뿌리염색+두피보호제',
+    stylist: '민경 스타일리스트',
+    reviewRating: 5,
+    content: '염색도 하고 싶고 펌도 하고 싶었는데... 너무 좋았어요!',
+    images: ['https://picsum.photos/320/320', 'https://picsum.photos/320/320'],
+    name: '김*영',
+    date: '1',
+    visitCount: 2,
+    helpfulCount: 1,
+  },
+  {
+    title: '[앞머리] 커트+펌',
+    stylist: '민경 스타일리스트',
+    reviewRating: 5,
+    content: '앞머리 커트를 하려고... 앞으로도 꾸준히 방문할 것 같아요.',
+    name: '박*웅',
+    date: '3',
+    visitCount: 3,
+    helpfulCount: 0,
+  },
+];
+
+export const reviewData = reviewsData;

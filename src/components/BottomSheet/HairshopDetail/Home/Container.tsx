@@ -8,6 +8,7 @@ import { Content } from './Content';
 import { getSnapPoint } from '@/utils/getSnapPoint';
 import { PickMenu } from '@/components/PickMenu/PickMenu';
 import { DesingerHome } from '@/components/Desinger/DesingerHome';
+import { ReviewHome } from '@/components/Review/ReviewHome';
 
 export const Container = () => {
   const { id } = useParams<{ id: string }>();
@@ -66,6 +67,7 @@ export const Container = () => {
           <Content />
           <PickMenu />
           <DesingerHome />
+          <ReviewHome />
         </div>
       </div>
     </BottomSheet>
