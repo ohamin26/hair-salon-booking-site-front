@@ -16,10 +16,10 @@ type MenuDataProps = {
 
 export const PickMenu = () => {
   return (
-    <div className="w-full px-4 pb-10 pt-0">
+    <div className="w-full max-w-default px-4 pb-10 pt-0">
       <Paragraph text={'픽메뉴'}></Paragraph>
       {menuData.map((data: MenuDataProps, index: Key | null | undefined) => (
-        <button key={index} className="mt-4 flex w-full border-t border-t-gray-100 pt-5">
+        <button key={index} className="mt-4 flex w-full border-t border-t-white-default pt-5">
           <CustomImg src={data.imgSrc} height="80" width="80" addClassName="mr-4 rounded-md object-cover" />
           <div className="flex-1">
             <div className="flex items-center justify-between">

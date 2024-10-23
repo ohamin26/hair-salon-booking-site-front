@@ -7,6 +7,7 @@ import { useParams } from 'react-router-dom';
 import { Content } from './Content';
 import { getSnapPoint } from '@/utils/getSnapPoint';
 import { PickMenu } from '@/components/PickMenu/PickMenu';
+import { DesingerHome } from '@/components/Desinger/DesingerHome';
 
 export const Container = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,9 +20,12 @@ export const Container = () => {
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
-    if (scrollDelta >= 300) setIsActiveScroll(true);
-    else setIsActiveScroll(false);
-    if (scrollDelta > 300) setScrollDelta(300);
+    if (window.innerHeight / springs.snapPoint.get() >= window.innerHeight) {
+      setIsActiveScroll(true);
+    } else {
+      setIsActiveScroll(false);
+    }
+    if (scrollDelta > 1500) setScrollDelta(1500);
     if (scrollDelta < 0) setScrollDelta(0);
   };
 
@@ -61,6 +65,7 @@ export const Container = () => {
         <div className={`${!isActiveScroll && 'fixed w-full'}`}>
           <Content />
           <PickMenu />
+          <DesingerHome />
         </div>
       </div>
     </BottomSheet>
