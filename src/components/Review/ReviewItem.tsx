@@ -26,13 +26,15 @@ export const ReviewItem = ({
       {images && images.length > 0 && (
         <div className="mb-4 flex gap-[2px]">
           {images.map((image: string, index: Key | null | undefined) => (
-            <CustomImg
-              key={index}
-              src={image}
-              addClassName="rounded-sm object-cover h-auto"
-              height={''}
-              width={'110'}
-            />
+            <button>
+              <CustomImg
+                key={index}
+                src={image}
+                addClassName="rounded-sm object-cover h-auto"
+                height={''}
+                width={'110'}
+              />
+            </button>
           ))}
         </div>
       )}
