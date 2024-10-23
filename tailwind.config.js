@@ -56,6 +56,7 @@ export default {
           '200': '#ccc',
           '300': '#aaa',
           '400': '#888',
+          'input-bg' : '#f5f5f5'
         },
       },
     },
