@@ -1,12 +1,12 @@
-import locationPin from '/assets/images/icons/location-pin.svg';
-import calendar from '/assets/images/icons/calendar.svg';
-import clock from '/assets/images/icons/clock.svg';
-import cancel from '/assets/images/icons/cancel.svg';
+import locationPin from '/assets/images/icons/icon-location-pin.svg';
+import calendar from '/assets/images/icons/icon-calendar.svg';
+import clock from '/assets/images/icons/icon-clock.svg';
+import cancel from '/assets/images/icons/icon-cancel.svg';
 import GoBack from '../../components/GoBack';
 
 export default function Location() {
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="flex h-[44px] items-center">
         <GoBack />
         <h2 className="flex-1 text-center text-[15px]">지역 검색</h2>
@@ -44,7 +44,7 @@ export default function Location() {
         <p className="text-[15px] font-semibold text-gray-400">최근 검색어가 없습니다.</p>
       </div>
 
-      <div className="bg-white fixed bottom-0 left-0 right-0 p-[16px] shadow-[3px_0px_14px_-5px_rgba(0,0,0,0.5)]">
+      <div className="m-auto bg-white max-w-default min-w-default fixed bottom-0 left-0 right-0 p-[16px] shadow-[3px_0px_14px_-5px_rgba(0,0,0,0.5)]">
         <button className="text-white h-[50px] w-full bg-black-default text-[16px]">검색</button>
       </div>
     </div>

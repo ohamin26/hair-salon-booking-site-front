@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import arrowLeft from '/assets/images/icons/arrow-left.svg';
+import arrowLeft from '/assets/images/icons/icon-arrow-left.svg';
 export default function GoBack() {
   const navigate = useNavigate();
   const goBack = () => {

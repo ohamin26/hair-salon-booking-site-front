@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import search from '/assets/images/icons/icon-search.svg';
 import { Link, Outlet, useLocation, useNavigate } from 'react-router-dom';
 import Tab from './Tab';
 import Logo from '../Logo';
@@ -27,17 +28,22 @@ export default function HomaNavigation() {
     <Outlet />
   ) : (
     <div>
-      <div className="flex items-center">
-        {pathname.includes('search') && <GoBack />}
-        <Link className="m-auto flex w-[106px]" to="/" onClick={() => setCurrentTab('홈')}>
-          <Logo />
-        </Link>
+      <div className="sticky top-0 bg-white">
+        <div className="flex items-center px-[6px]">
+          {pathname.includes('search') && <GoBack />}
+          <Link className="m-auto flex w-[106px]" to="/" onClick={() => setCurrentTab('홈')}>
+            <Logo />
+          </Link>
+          <button>
+            <img src={search} alt="search-icon" width={40} height={44} className="px-[8px] py-[10px]" />
+          </button>
+        </div>
+        <nav className="flex justify-between px-[13px]">
+          {TAB_LIST.map((tab) => (
+            <Tab key={tab} tab={tab} handleTabClick={handleTabClick} currentTab={currentTab} />
+          ))}
+        </nav>
       </div>
-      <nav className="flex justify-between px-[13px]">
-        {TAB_LIST.map((tab) => (
-          <Tab key={tab} tab={tab} handleTabClick={handleTabClick} currentTab={currentTab} />
-        ))}
-      </nav>
       <Outlet />
     </div>
   );
