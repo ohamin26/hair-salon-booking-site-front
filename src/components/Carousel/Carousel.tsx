@@ -20,7 +20,7 @@ export const Carousel = () => {
     customPaging: (i: number) => {
       return (
         <div
-          className={`absolute bottom-10 h-[3px] w-[31px] cursor-pointer ${i === currentSlide ? 'bg-white-default' : 'bg-gray-300'}`}
+          className={`absolute bottom-[45px] h-[1px] w-[31px] cursor-pointer ${i === currentSlide ? 'bg-white-default' : 'bg-gray-200'}`}
         />
       );
     },

@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 import { BottomSheet } from 'react-spring-bottom-sheet';
 import { useSpring } from '@react-spring/web';
 import '@/styles/bottom-sheet-style.css';
-import { MenuHeader } from '@/components/Hearder/MemuHeader';
-import { useParams } from 'react-router-dom';
+import { DetailHeader } from '@/components/Hearder/DetailHeader';
 import { Content } from './Content';
 import { getSnapPoint } from '@/utils/getSnapPoint';
 import { PickMenu } from '@/components/PickMenu/PickMenu';
@@ -11,17 +10,17 @@ import { DesingerHome } from '@/components/Desinger/DesingerHome';
 import { ReviewHome } from '@/components/Review/ReviewHome';
 
 export const Container = () => {
-  const { id } = useParams<{ id: string }>();
   const [scrollDelta, setScrollDelta] = useState(0);
   const [springs, api] = useSpring(() => ({
-    snapPoint: 1.95,
+    snapPoint: 1.75,
     config: { tension: 170, friction: 26 },
   }));
   const [isActiveScroll, setIsActiveScroll] = useState(false);
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
-    if (window.innerHeight / springs.snapPoint.get() >= window.innerHeight) {
+    console.log(window.innerHeight / springs.snapPoint.get());
+    if (window.innerHeight / springs.snapPoint.get() >= 913) {
       setIsActiveScroll(true);
     } else {
       setIsActiveScroll(false);
@@ -61,7 +60,7 @@ export const Container = () => {
       <div className="overflow-hidden">
         <div>{'화면 보호기'}</div>
         <div className="fixed top-3 z-10">
-          <MenuHeader reviewCount={10} id={id} />
+          <DetailHeader />
         </div>
         <div className={`${!isActiveScroll && 'fixed w-full'}`}>
           <Content />

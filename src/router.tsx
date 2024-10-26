@@ -5,6 +5,8 @@ import Location from './pages/Location/Location';
 import HairShop from './pages/HairShop/HairShop';
 import Designer from './pages/Designer/Designer';
 import HomaNavigation from './components/HomeNavigation/HomeNavigation';
+import { DetailMemu } from './pages/HairShopDetail/DetailMemu';
+import { MenuNavigation } from './components/HomeNavigation/MenuNavigation';
 
 type RouteElement = {
   path: string;
@@ -23,18 +25,23 @@ const routes: RouteElement[] = [
         element: <Home />,
       },
       { path: '/location', element: <Location /> },
+
+      { path: '/search/hair', element: <HairShop /> },
+      { path: '/search/designer', element: <Designer /> },
+    ],
+  },
+  {
+    path: '/:id',
+    element: <MenuNavigation />,
+    children: [
       {
         path: '/:id',
         element: <DetailHome />,
-        children: [
-          {
-            path: 'product',
-            element: <DetailHome />,
-          },
-        ],
       },
-      { path: '/search/hair', element: <HairShop /> },
-      { path: '/search/designer', element: <Designer /> },
+      {
+        path: '/:id/product',
+        element: <DetailMemu />,
+      },
     ],
   },
 ];

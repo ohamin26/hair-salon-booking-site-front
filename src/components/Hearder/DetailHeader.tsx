@@ -1,17 +1,14 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 
 type LinkProps = {
   children?: React.ReactNode;
   to: string;
 };
 
-type MenuHeaderProps = {
-  reviewCount: number;
-  id: string;
-};
-
-export const MenuHeader = ({ reviewCount, id }: MenuHeaderProps) => {
+export const DetailHeader = () => {
   const location = useLocation();
+  const { id } = useParams<{ id: string }>();
+  const reviewCount = 10;
   const active =
     'text-black-default font-bold relative z-10 before:absolute before:w-full before:left-0 before:bottom-1 before:h-[6px] before:bg-purple-100 before:z-[-1]';
   const LinkMenu = (props: LinkProps) => {
@@ -37,6 +34,7 @@ export const MenuHeader = ({ reviewCount, id }: MenuHeaderProps) => {
           <span>리뷰 {reviewCount}</span>
         </LinkMenu>
       </div>
+      <hr className="mt-3 h-[1px] w-full border-0 bg-gray-50" />
     </header>
   );
 };
