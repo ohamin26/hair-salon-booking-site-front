@@ -12,9 +12,11 @@ const images = [
 
 export const ReviewGrid = (/*{ images }*/) => {
   return (
-    <div className="grid grid-cols-4 gap-[1px] border-b border-b-gray-50 py-5">
+    <div className="grid grid-cols-4 gap-[1px] border-b border-b-gray-50 py-3">
       {images.slice(0, 7).map((image, index) => (
-        <CustomImg key={index} src={image} addClassName="h-auto w-full object-cover" height={''} width={''} />
+        <button>
+          <CustomImg key={index} src={image} addClassName="h-auto w-full object-cover" height={''} width={''} />
+        </button>
       ))}
       <button className="relative overflow-hidden bg-gray-200">
         <CustomImg src={images[6]} addClassName="h-auto w-full object-cover opacity-90" height={''} width={''} />

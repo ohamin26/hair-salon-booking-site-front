@@ -8,6 +8,7 @@ import HomaNavigation from './components/HomeNavigation/HomeNavigation';
 import { DetailMemu } from './pages/HairShopDetail/DetailMemu';
 import { MenuNavigation } from './components/MenuNavagation/MenuNavigation';
 import DetailDesinger from './pages/HairShopDetail/DetailDesinger';
+import DetailReview from './pages/HairShopDetail/DetailReview';
 
 type RouteElement = {
   path: string;
@@ -46,6 +47,10 @@ const routes: RouteElement[] = [
       {
         path: '/:id/designer',
         element: <DetailDesinger />,
+      },
+      {
+        path: '/:id/review',
+        element: <DetailReview />,
       },
     ],
   },
