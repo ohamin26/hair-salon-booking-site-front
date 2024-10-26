@@ -14,7 +14,7 @@ export const Container = () => {
   const { id } = useParams<{ id: string }>();
   const [scrollDelta, setScrollDelta] = useState(0);
   const [springs, api] = useSpring(() => ({
-    snapPoint: 1.7,
+    snapPoint: 1.95,
     config: { tension: 170, friction: 26 },
   }));
   const [isActiveScroll, setIsActiveScroll] = useState(false);
