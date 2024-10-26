@@ -20,7 +20,7 @@ const MenuData = [
     title: '[첫방문특가]가쯔전체염색+유/수분단백질케어',
     discount: '50%',
     price: '59,500',
-    originalPrice: '120,000',
+    price: '120,000',
     tags: ['커트별도'],
   },
   {
@@ -28,7 +28,7 @@ const MenuData = [
     title: '[2024예약조건]기추NO시세이도셋팅+솔루션케어',
     discount: '50%',
     price: '91,000',
-    originalPrice: '182,000',
+    price: '182,000',
     tags: ['커트포함'],
     label: '타임세일',
   },
@@ -37,7 +37,7 @@ const MenuData = [
     title: '[민경 PICK]디자인커트+다운펌+앞머리펌',
     discount: '11%',
     price: '39,000',
-    originalPrice: '44,000',
+    price: '44,000',
     tags: ['커트포함'],
   },
   {
@@ -45,7 +45,7 @@ const MenuData = [
     title: '[민경 PICK]시그니처복구매직+유/수분단백질',
     discount: '50%',
     price: '99,000',
-    originalPrice: '199,000',
+    price: '199,000',
     tags: ['커트포함', '길이추가'],
   },
   {
@@ -53,7 +53,7 @@ const MenuData = [
     title: '[은서 PICK]기추NO염색+윤채크리닉',
     discount: '50%',
     price: '79,500',
-    originalPrice: '159,000',
+    price: '159,000',
     tags: ['커트별도'],
   },
 ];
@@ -85,3 +85,118 @@ const reviewsData = [
 ];
 
 export const reviewData = reviewsData;
+
+const menuItems = {
+  pickMenu: [...MenuData],
+  cut: [
+    {
+      name: '여성컷+앞머리펌',
+      discount: 20,
+      discountedPrice: 45000,
+      price: 56250,
+    },
+    {
+      name: '여성컷+샴푸',
+      discount: 20,
+      discountedPrice: 35000,
+      price: 43750,
+    },
+    {
+      name: '섬세한 여성컷',
+      discount: 20,
+      discountedPrice: 25000,
+      price: 31300,
+    },
+    {
+      name: '남성컷+포인트펌+다운펌',
+      discount: 20,
+      discountedPrice: 70000,
+      price: 87500,
+      label: '타임세일',
+    },
+    {
+      name: '남성컷+옆뒤다운펌',
+      discount: 20,
+      discountedPrice: 56000,
+      price: 70000,
+    },
+    {
+      name: '남성컷+옆 다운펌',
+      discount: 20,
+      discountedPrice: 42000,
+      price: 52500,
+    },
+    {
+      name: '초정밀 남성컷',
+      discount: 25,
+      discountedPrice: 22000,
+      price: 29400,
+    },
+    {
+      name: '디자인컷+헤드스파',
+      discount: 25,
+      discountedPrice: 40000,
+      price: 53400,
+    },
+    {
+      name: '앞머리컷',
+      discount: 50,
+      discountedPrice: 5000,
+      price: 10000,
+      label: '타임세일',
+    },
+  ],
+  perm: [
+    {
+      name: '[시그니처]복구매직셋팅',
+      discount: 30,
+      discountedPrice: 245000,
+      price: 350000,
+      tags: ['커트포함', '길이추가'],
+    },
+    {
+      name: '매직 셋팅펌',
+      discount: 25,
+      discountedPrice: 210000,
+      price: 280000,
+    },
+    {
+      name: '[시그니처]CS컬 드라이 펌',
+      discount: 30,
+      discountedPrice: 189000,
+      price: 270000,
+      label: '타임세일',
+      tags: ['커트포함', '길이추가'],
+    },
+    {
+      name: '디자인 셋팅펌',
+      discount: 25,
+      discountedPrice: 149000,
+      price: 198700,
+      tags: ['커트포함', '길이추가'],
+    },
+    {
+      name: '레이어드 C컬펌+클리닉 3단계',
+      discount: 30,
+      discountedPrice: 140000,
+      price: 200000,
+      tags: ['커트포함', '길이추가'],
+    },
+    {
+      name: '여성 콜드펌+수분클리닉',
+      discount: 20,
+      discountedPrice: 110000,
+      price: 137500,
+      label: '타임세일',
+    },
+    {
+      name: '[시그니처]복구매직',
+      discount: 30,
+      discountedPrice: 245000,
+      price: 350000,
+      tags: ['커트포함', '길이추가'],
+    },
+  ],
+};
+
+export const menuItemsData = menuItems;

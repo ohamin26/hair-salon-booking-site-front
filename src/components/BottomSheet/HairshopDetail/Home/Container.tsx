@@ -19,8 +19,7 @@ export const Container = () => {
 
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
-    console.log(window.innerHeight / springs.snapPoint.get());
-    if (window.innerHeight / springs.snapPoint.get() >= 913) {
+    if (window.innerHeight / springs.snapPoint.get() >= 900) {
       setIsActiveScroll(true);
     } else {
       setIsActiveScroll(false);

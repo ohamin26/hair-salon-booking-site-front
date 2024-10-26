@@ -1,5 +1,6 @@
 import { cva, VariantProps } from 'class-variance-authority';
 import { ButtonHTMLAttributes, FC } from 'react';
+import { twMerge } from 'tailwind-merge';
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof ButtonVariants> {
   text: string;
   children?: React.ReactElement;
@@ -40,7 +41,7 @@ export const ButtonVariants = cva('flex items-center justify-center py-3 px-6', 
 
 export const CustomButton: FC<ButtonProps> = ({ text, onClick, addClassName }) => {
   return (
-    <button className={`${ButtonVariants()} ${addClassName}`} onClick={onClick}>
+    <button className={twMerge(`${ButtonVariants()} ${addClassName}`)} onClick={onClick}>
       {text}
     </button>
   );
