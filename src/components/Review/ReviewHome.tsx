@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { CustomButton } from '../Button/Button';
 import { Paragraph } from '../Paragraph/Paragraph';
 import { ReviewGrid } from './ReviewGrid';
@@ -10,9 +11,9 @@ export const ReviewHome = () => {
       <Paragraph text="예약고객 리뷰 251" />
       <ReviewGrid />
       <ReviewList reviews={reviewData} />
-      <div className="flex w-full items-center justify-center">
+      <Link to={'./review'} className="flex w-full items-center justify-center">
         <CustomButton text={'리뷰 전체보기'} onClick={() => {}} />
-      </div>
+      </Link>
     </div>
   );
 };
