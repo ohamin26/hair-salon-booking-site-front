@@ -39,18 +39,19 @@ const designers = [
   },
 ];
 
-export const DesignerList = ({ count }: { count: number }) => {
+export const DesignerList = ({ short = true }: { short?: boolean }) => {
+  const filteredMenuData = short ? designers.slice(0, 5) : designers;
   return (
-    <div className="pb-10 mx-auto max-w-default">
-      <Paragraph text={'디자이너 7'}></Paragraph>
-      {designers.slice(0, count).map((designer, index) => (
-        <div key={index} className="flex items-center justify-between pt-5 mt-4 border-t border-t-white-default">
+    <div className="mx-auto max-w-default pb-10">
+      {short && <Paragraph text={'디자이너 7'}></Paragraph>}
+      {filteredMenuData.map((designer, index) => (
+        <div key={index} className="mt-4 flex items-center justify-between border-t border-t-white-default pt-5">
           <div className="flex items-center">
             <CustomImg src={designer.imgUrl} height="75" width="75" addClassName="mr-4 rounded-full" />
             <div>
               <p className="font-medium">{designer.name}</p>
               <p className="text-sm text-gray-500">{designer.expertise}</p>
-              <div className="flex items-center mt-1 space-x-2 text-sm text-gray-600">
+              <div className="mt-1 flex items-center space-x-2 text-sm text-gray-600">
                 <div className="flex items-center">
                   <span className="mr-1">❤️</span>
                   <span>{designer.likes}</span>

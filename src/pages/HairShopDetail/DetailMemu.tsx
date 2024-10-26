@@ -1,3 +1,4 @@
+import { HairshopDetail } from '../../components/Container/HairshopDetail';
 import DetailMenuList from '../../components/DetailMenuList/DetailMenuList';
 import { DetailHeader } from '../../components/Hearder/DetailHeader';
 import MenuHeader from '../../components/Hearder/MenuHeader';
@@ -16,7 +17,7 @@ const menuList = [
 export const DetailMemu = () => {
   const kindList = menuList.filter((item) => Object.keys(menuItemsData).includes(item.type)).map((item) => item.text);
   return (
-    <div className="pb-20">
+    <HairshopDetail>
       <DetailHeader />
       <MenuHeader kind={kindList} />
       <PickMenuList short={false} />
@@ -30,6 +31,6 @@ export const DetailMemu = () => {
             />
           ),
       )}
-    </div>
+    </HairshopDetail>
   );
 };
