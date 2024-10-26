@@ -6,7 +6,7 @@ import { reviewData } from '@/mocks/HairshopDetailData';
 
 export const ReviewHome = () => {
   return (
-    <div className="min-w-default max-w-default py-4">
+    <div className="max-w-default p-4">
       <Paragraph text="예약고객 리뷰 251" />
       <ReviewGrid />
       <ReviewList reviews={reviewData} />

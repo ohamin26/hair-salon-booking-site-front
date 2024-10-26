@@ -46,7 +46,7 @@ export const Content = () => {
 
       <div className="mt-4 flex items-center justify-between text-gray-600">
         <Tap width={imgWidth} height={imgHeight} text={likeCount} src="/assets/images/icons/icon-like.svg" />
-        <Tap width="25" height="23" text="위치" src="/assets/images/icons/icon-location.svg" />
+        <Tap width="25" height="23" imgClassName="py-[6px]" text="위치" src="/assets/images/icons/icon-location.svg" />
         <Tap width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
         <Tap width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />
       </div>
