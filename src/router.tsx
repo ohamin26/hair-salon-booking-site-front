@@ -2,13 +2,12 @@ import { createBrowserRouter } from 'react-router-dom';
 import Home from './pages/Home';
 import { DetailHome } from './pages/HairShopDetail/DetailHome';
 import Location from './pages/Location/Location';
-import HairShop from './pages/HairShop/HairShop';
-import Designer from './pages/Designer/Designer';
 import HomaNavigation from './components/HomeNavigation/HomeNavigation';
 import { DetailMemu } from './pages/HairShopDetail/DetailMemu';
 import { MenuNavigation } from './components/MenuNavagation/MenuNavigation';
 import DetailDesinger from './pages/HairShopDetail/DetailDesinger';
 import DetailReview from './pages/HairShopDetail/DetailReview';
+import Around from './pages/Around/Around';
 
 type RouteElement = {
   path: string;
@@ -27,9 +26,7 @@ const routes: RouteElement[] = [
         element: <Home />,
       },
       { path: '/location', element: <Location /> },
-
-      { path: '/search/hair', element: <HairShop /> },
-      { path: '/search/designer', element: <Designer /> },
+      { path: '/search/around', element: <Around /> },
     ],
   },
   {
