@@ -16,7 +16,7 @@ export default function HomaNavigation() {
   const handleTabClick = (tab: TabType) => {
     setCurrentTab(tab);
     tab === '홈' && navigate('/');
-    tab === '내주변' && navigate('/search/hair');
+    tab === '내주변' && navigate('/search/around');
   };
 
   useEffect(() => {
