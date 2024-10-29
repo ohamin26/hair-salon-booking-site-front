@@ -1,5 +1,7 @@
 import { Key } from 'react';
 import { CustomImg } from '../Image/CustomImg';
+import Modal from '../Modal/Modal';
+import { useModalState } from '@/stores/useModalState';
 
 export const ReviewItem = ({
   title,
@@ -11,6 +13,10 @@ export const ReviewItem = ({
   visitCount,
   name,
 }: ReviewItemProps) => {
+  const { isModalOpen, modalOpen } = useModalState();
+  const onClickImg = () => {
+    modalOpen();
+  };
   return (
     <div className="mb-4 border-t border-t-white-default pt-4">
       <div className="text-base font-bold">
@@ -26,7 +32,7 @@ export const ReviewItem = ({
       {images && images.length > 0 && (
         <div className="mb-4 flex gap-[2px]">
           {images.map((image: string, index: Key | null | undefined) => (
-            <button>
+            <button onClick={onClickImg}>
               <CustomImg
                 key={index}
                 src={image}
@@ -44,6 +50,7 @@ export const ReviewItem = ({
       <div className="mb-2 mt-4 text-sm text-gray-600">
         {name} | {date}일 전 | {visitCount}번째 방문
       </div>
+      {isModalOpen && <Modal />}
     </div>
   );
 };

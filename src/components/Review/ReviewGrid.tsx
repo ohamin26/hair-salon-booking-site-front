@@ -1,3 +1,4 @@
+import { useModalState } from '@/stores/useModalState';
 import { CustomImg } from '../Image/CustomImg';
 
 const images = [
@@ -11,10 +12,14 @@ const images = [
 ];
 
 export const ReviewGrid = (/*{ images }*/) => {
+  const { modalOpen } = useModalState();
+  const onClickImg = () => {
+    modalOpen();
+  };
   return (
     <div className="grid grid-cols-4 gap-[1px] border-b border-b-gray-50 py-3">
       {images.slice(0, 7).map((image, index) => (
-        <button>
+        <button onClick={onClickImg}>
           <CustomImg key={index} src={image} addClassName="h-auto w-full object-cover" height={''} width={''} />
         </button>
       ))}
