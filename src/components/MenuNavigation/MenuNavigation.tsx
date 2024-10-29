@@ -15,6 +15,7 @@ export const MenuNavigation = () => {
         <button onClick={goBack}>
           <img src={arrowLeft} width={40} height={44} className="px-[8px] py-[10px]" />
         </button>
+        <div>헤어샵 타이틀</div>
         <button onClick={gohome}>
           <img src={homeIcon} alt="search-icon" width={40} height={44} className="px-[8px] py-[10px]" />
         </button>
