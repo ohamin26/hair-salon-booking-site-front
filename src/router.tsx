@@ -3,11 +3,12 @@ import Home from './pages/Home';
 import { DetailHome } from './pages/HairShopDetail/DetailHome';
 import Location from './pages/Location/Location';
 import HomaNavigation from './components/HomeNavigation/HomeNavigation';
-import { DetailMemu } from './pages/HairShopDetail/DetailMemu';
-import { MenuNavigation } from './components/MenuNavagation/MenuNavigation';
+import { MenuNavigation } from './components/MenuNavigation/MenuNavigation';
 import DetailDesinger from './pages/HairShopDetail/DetailDesinger';
 import DetailReview from './pages/HairShopDetail/DetailReview';
 import Around from './pages/Around/Around';
+import { DetailMenuInfo } from './pages/HairShopDetail/DetailMenu/DetailMenuInfo';
+import { DetailMemu } from './pages/HairShopDetail/DetailMenu/DetailMemu';
 
 type RouteElement = {
   path: string;
@@ -48,6 +49,10 @@ const routes: RouteElement[] = [
       {
         path: '/:id/review',
         element: <DetailReview />,
+      },
+      {
+        path: '/:id/product/:productId/info',
+        element: <DetailMenuInfo />,
       },
     ],
   },

@@ -1,8 +1,8 @@
-import { HairshopDetail } from '../../components/Container/HairshopDetail';
-import DetailMenuList from '../../components/DetailMenuList/DetailMenuList';
-import { DetailHeader } from '../../components/Hearder/DetailHeader';
-import MenuHeader from '../../components/Hearder/MenuHeader';
-import PickMenuList from '../../components/PickMenu/PickMenuList';
+import { HairshopDetail } from '@/components/Container/HairshopDetail';
+import DetailMenuList from '@/components/DetailMenuList/DetailMenuList';
+import { DetailHeader } from '@/components/Hearder/DetailHeader';
+import MenuHeader from '@/components/Hearder/MenuHeader';
+import PickMenuList from '@/components/PickMenu/PickMenuList';
 import { menuItemsData } from '@/mocks/HairshopDetailData.js';
 
 const menuList = [
