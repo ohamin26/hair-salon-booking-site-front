@@ -30,6 +30,12 @@ export const getSnapPoint = (scrollDelta: number, screenWidth: number) => {
     if (scrollDelta < 150) return 1.3;
     if (scrollDelta < 200) return 1.2;
     return 1.035;
+  } else if (screenWidth < 2000) {
+    if (scrollDelta < 50) return 1.75;
+    if (scrollDelta < 100) return 1.5;
+    if (scrollDelta < 150) return 1.3;
+    if (scrollDelta < 200) return 1.2;
+    return 1.035;
   } else {
     if (scrollDelta < 50) return 2.3;
     if (scrollDelta < 100) return 1.5;

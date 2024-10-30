@@ -9,6 +9,7 @@ import DetailReview from './pages/HairShopDetail/DetailReview';
 import Around from './pages/Around/Around';
 import { DetailMenuInfo } from './pages/HairShopDetail/DetailMenu/DetailMenuInfo';
 import { DetailMemu } from './pages/HairShopDetail/DetailMenu/DetailMemu';
+import ReviewPhotoGrid from './pages/Review/ReviewPhotoGrid';
 
 type RouteElement = {
   path: string;
@@ -51,8 +52,12 @@ const routes: RouteElement[] = [
         element: <DetailReview />,
       },
       {
-        path: '/:id/product/:productId/info',
+        path: '/:id/product/:productId/infos',
         element: <DetailMenuInfo />,
+      },
+      {
+        path: '/:id/review/photo-reviews',
+        element: <ReviewPhotoGrid />,
       },
     ],
   },
