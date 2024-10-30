@@ -3,6 +3,7 @@ import { Info } from '@/components/DetailMenuInfo/Info';
 import { CustomImg } from '@/components/Image/CustomImg';
 import { useNavType } from '@/stores/useNavType';
 import Review from '@/components/DetailMenuInfo/Review';
+import ReservationButton from '@/components/Button/ReservationButton';
 
 const DetailMenuInfoData = {
   discount: 49,
@@ -37,7 +38,7 @@ const Icon = ({ src }: { src: string }) => {
 export const DetailMenuInfo = () => {
   const { type } = useNavType();
   return (
-    <div className="mx-auto min-w-default max-w-default pb-4">
+    <div className="mx-auto min-w-default max-w-default pb-24">
       <CustomImg
         src={DetailMenuInfoData.image}
         addClassName="w-full object-cover mb-3 m-0 p-0"
@@ -77,6 +78,7 @@ export const DetailMenuInfo = () => {
           herbExtract={DetailMenuInfoData.herbExtract}
         />
       )}
+      <ReservationButton />
     </div>
   );
 };

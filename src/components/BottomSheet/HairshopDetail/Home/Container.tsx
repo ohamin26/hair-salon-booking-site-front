@@ -9,6 +9,7 @@ import { PickMenu } from '@/components/PickMenu/PickMenu';
 import { DesingerHome } from '@/components/Desinger/DesingerHome';
 import { ReviewHome } from '@/components/Review/ReviewHome';
 import { useModalState } from '@/stores/useModalState';
+import ReservationButton from '@/components/Button/ReservationButton';
 
 export const Container = () => {
   const [scrollDelta, setScrollDelta] = useState(0);
@@ -57,7 +58,7 @@ export const Container = () => {
       initialFocusRef={false}
       expandOnContentDrag={false}
     >
-      <div className="overflow-hidden">
+      <div className="overflow-hidden pb-24">
         <div>{'화면 보호기'}</div>
         <div className="fixed top-3 z-10">
           <DetailHeader />
@@ -68,6 +69,7 @@ export const Container = () => {
           <DesingerHome />
           <ReviewHome />
         </div>
+        <ReservationButton />
       </div>
     </BottomSheet>
   );
