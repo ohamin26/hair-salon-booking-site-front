@@ -2,8 +2,10 @@ import { Paragraph } from '../Paragraph/Paragraph';
 import { menuData } from '@/mocks/HairshopDetailData.js';
 import { Key } from 'react';
 import { CustomImg } from '../Image/CustomImg';
+import { Link, useParams } from 'react-router-dom';
 
 type MenuDataProps = {
+  productId: number;
   imgSrc: string;
   title: string;
   discount: string;
@@ -14,11 +16,16 @@ type MenuDataProps = {
 };
 export default function PickMenuList({ short }: { short: boolean }) {
   const filteredMenuData = short ? menuData.slice(0, 5) : menuData;
+  const { id } = useParams<{ id: string }>();
   return (
     <div className="p-2">
       <Paragraph text={'픽메뉴'}></Paragraph>
       {filteredMenuData.map((data: MenuDataProps, index: Key | null | undefined) => (
-        <button key={index} className="mt-4 flex w-full border-t border-t-white-default pt-5">
+        <Link
+          to={`/${id}/product/${data.productId}/infos`}
+          key={index}
+          className="mt-4 flex w-full border-t border-t-white-default pt-5"
+        >
           <CustomImg src={data.imgSrc} height="80" width="80" addClassName="mr-4 rounded-md object-cover" />
           <div className="flex-1">
             <div className="flex items-center justify-between">
@@ -38,7 +45,7 @@ export default function PickMenuList({ short }: { short: boolean }) {
               ))}
             </div>
           </div>
-        </button>
+        </Link>
       ))}
     </div>
   );

@@ -1,7 +1,9 @@
 import { Key } from 'react';
 import { Paragraph } from '../Paragraph/Paragraph';
+import { Link } from 'react-router-dom';
 
 type MenuItemProps = {
+  productId: number;
   name: string;
   price: number;
   discountedPrice: number;
@@ -20,7 +22,11 @@ export default function DetailMenuList({ title, menuItems }: DetailMenuListProps
     <div className="my-3 border-t-[6px] border-t-gray-50 p-2">
       <Paragraph text={title}></Paragraph>
       {menuItems.map((data: MenuItemProps, index: Key | null | undefined) => (
-        <button key={index} className="mt-4 flex w-full border-t border-t-white-default pt-5">
+        <Link
+          to={`./${data.productId}/infos`}
+          key={index}
+          className="mt-4 flex w-full border-t border-t-white-default pt-5"
+        >
           <div className="flex-1">
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-bold text-gray-900">{data.name}</h2>
@@ -40,7 +46,7 @@ export default function DetailMenuList({ title, menuItems }: DetailMenuListProps
                 ))}
             </div>
           </div>
-        </button>
+        </Link>
       ))}
     </div>
   );
