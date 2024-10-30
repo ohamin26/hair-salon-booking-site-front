@@ -29,7 +29,7 @@ const DetailMenuInfoData = {
 const Icon = ({ src }: { src: string }) => {
   return (
     <button>
-      <CustomImg src={src} width={35} height={60} />
+      <CustomImg src={src} width={'35'} height={'60'} />
     </button>
   );
 };
@@ -38,7 +38,12 @@ export const DetailMenuInfo = () => {
   const { type } = useNavType();
   return (
     <div className="mx-auto min-w-default max-w-default pb-4">
-      <CustomImg src={DetailMenuInfoData.image} addClassName="w-full object-cover mb-3 m-0 p-0" />
+      <CustomImg
+        src={DetailMenuInfoData.image}
+        addClassName="w-full object-cover mb-3 m-0 p-0"
+        height={''}
+        width={''}
+      />
       <div className="m-0 flex gap-2 p-0">
         <div className="flex items-center">
           <Icon src="/assets/images/icons/icon-like.svg" />

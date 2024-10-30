@@ -13,7 +13,8 @@ export default function Modal() {
   const onClickClose = () => {
     modalClose();
   };
-  const top = location.pathname.includes('/review') ? 'top-[0px]' : 'top-[-30px]';
+  const top =
+    location.pathname.includes('/review') || location.pathname.includes('infos') ? 'top-[0px]' : 'top-[-30px]';
 
   const onClickInfo = () => {
     setIsInfoOpen(!isInfoOpen);
@@ -34,8 +35,7 @@ export default function Modal() {
   return (
     <div
       id="carousel-modal"
-      aria-hidden="true"
-      className={`${window.innerWidth > 700 && 'left-auto right-auto w-[640px] max-w-default'} bg-black fixed inset-0 top-[-30px] z-50 flex w-full min-w-default flex-col ${top}`}
+      className={`${window.innerWidth > 700 && 'left-0 right-0 mx-auto w-[640px] max-w-default'} bg-black fixed inset-0 top-[-30px] z-50 flex w-full min-w-default flex-col ${top}`}
     >
       <div className="bg-white relative z-10 flex w-full items-center p-[9px] shadow-md">
         <button
