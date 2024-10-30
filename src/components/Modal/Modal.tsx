@@ -37,16 +37,16 @@ export default function Modal() {
       id="carousel-modal"
       className={`${window.innerWidth > 700 && 'left-0 right-0 mx-auto w-[640px] max-w-default'} bg-black fixed inset-0 top-[-30px] z-50 flex w-full min-w-default flex-col ${top}`}
     >
-      <div className="bg-white relative z-10 flex w-full items-center p-[9px] shadow-md">
+      <div className="bg-white relative z-10 flex w-full items-center justify-center p-[9px] shadow-md">
         <button
           onClick={onClickClose}
           type="button"
-          className="mr-auto inline-flex h-6 w-6 items-center text-black-default"
+          className="absolute left-4 inline-flex h-6 w-6 items-center text-black-default"
           aria-label="모달 닫기"
         >
           <img src="/assets/images/icons/icon-close.svg" alt="모달 닫기" />
         </button>
-        <span className="text-md mr-auto">
+        <span className="text-md">
           포토리뷰 {currentSlide + 1} / {reviewData.length}
         </span>
       </div>
