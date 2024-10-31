@@ -77,7 +77,7 @@ export default function Location() {
         }
         onDismiss={() => setOpen(false)}
         open={open}
-        snapPoints={({ maxHeight }) => [maxHeight * 0.54]}
+        snapPoints={({ maxHeight }: { maxHeight: number }) => [maxHeight * 0.54]}
       >
         <ul className="my-[20px] flex flex-col gap-[25px] overflow-auto text-center">
           {DAY_LIST.map((day) => (
