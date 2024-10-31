@@ -2,11 +2,28 @@ import locationPin from '/assets/images/icons/icon-location-pin.svg';
 import calendar from '/assets/images/icons/icon-calendar.svg';
 import clock from '/assets/images/icons/icon-clock.svg';
 import cancel from '/assets/images/icons/icon-cancel.svg';
+import close from '/assets/images/icons/icon-close-without-bg.svg';
+import currentLocation from '/assets/images/icons/icon-current-location.svg';
 import GoBack from '../../components/GoBack';
+import { useState } from 'react';
+import { BottomSheet } from 'react-spring-bottom-sheet';
+const DAY_LIST = [
+  '11월 1일 (수)',
+  '11월 2일 (목)',
+  '11월 3일 (금)',
+  '11월 4일 (토)',
+  '11월 5일 (일)',
+  '11월 6일 (월)',
+  '11월 7일 (화)',
+  '11월 8일 (수)',
+  '11월 9일 (목)',
+  '11월 10일 (금)',
+];
 
 export default function Location() {
+  const [open, setOpen] = useState(false);
   return (
-    <div className="relative ">
+    <div className="relative">
       <div className="flex h-[44px] items-center">
         <GoBack />
         <h2 className="flex-1 text-center text-[15px]">지역 검색</h2>
@@ -20,13 +37,15 @@ export default function Location() {
             <img src={cancel} width={20} height={20} />
           </button>
           <button className="bg-white mr-[4px] flex h-[40px] w-[40px] flex-shrink-0 items-center justify-center rounded-full">
-            <img src={cancel} width={20} height={20} className="h-[20px] w-[20px] rounded-full" />
+            <img src={currentLocation} width={40} height={40} className="h-[40px] w-[40px] rounded-full" />
           </button>
         </div>
         <div className="flex gap-[6px]">
           <div className="flex h-[50px] flex-1 gap-[12px] rounded-full bg-gray-input-bg">
             <img src={calendar} width={20} height={20} className="ml-5" />
-            <button className="w-full text-left">예약가능 날짜</button>
+            <button className="w-full text-left" onClick={() => setOpen(true)}>
+              예약가능 날짜
+            </button>
           </div>
           <div className="flex h-[50px] flex-1 gap-[12px] rounded-full bg-gray-input-bg">
             <img src={clock} width={20} height={20} className="ml-5" />
@@ -44,9 +63,30 @@ export default function Location() {
         <p className="text-[15px] font-semibold text-gray-400">최근 검색어가 없습니다.</p>
       </div>
 
-      <div className="m-auto bg-white max-w-default min-w-default fixed bottom-0 left-0 right-0 p-[16px] shadow-[3px_0px_14px_-5px_rgba(0,0,0,0.5)]">
+      <div className="bg-white fixed bottom-0 left-0 right-0 m-auto min-w-default max-w-default p-[16px] shadow-[3px_0px_14px_-5px_rgba(0,0,0,0.5)]">
         <button className="text-white h-[50px] w-full bg-black-default text-[16px]">검색</button>
       </div>
+      <BottomSheet
+        header={
+          <div className="flex items-center justify-between">
+            <b className="text-lg">예약가능 날짜를 선택하세요.</b>
+            <button onClick={() => setOpen(false)}>
+              <img src={close} alt="close-icon" />
+            </button>
+          </div>
+        }
+        onDismiss={() => setOpen(false)}
+        open={open}
+        snapPoints={({ maxHeight }) => [maxHeight * 0.54]}
+      >
+        <ul className="my-[20px] flex flex-col gap-[25px] overflow-auto text-center">
+          {DAY_LIST.map((day) => (
+            <li key={day} className="text-lg">
+              {day}
+            </li>
+          ))}
+        </ul>
+      </BottomSheet>
     </div>
   );
 }
