@@ -27,18 +27,22 @@
 }
 
 ::-webkit-scrollbar {
-  width: 20px;
-  background: '#inherit';
-  
+  width: 10px; 
+  background: inherit; 
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 10px;
-  background: '#111';
+  width: 4px; 
+  background: #aaa; 
+  border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: '#888';
+  background: #888; 
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent; 
 }
 
 :root {
