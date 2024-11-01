@@ -139,3 +139,7 @@
   /* Allows interactions on the rest of the page before the close transition is finished */
   pointer-events: none;
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
