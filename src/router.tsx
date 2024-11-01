@@ -10,6 +10,7 @@ import Around from './pages/Around/Around';
 import { DetailMenuInfo } from './pages/HairShopDetail/DetailMenu/DetailMenuInfo';
 import { DetailMemu } from './pages/HairShopDetail/DetailMenu/DetailMemu';
 import ReviewPhotoGrid from './pages/Review/ReviewPhotoGrid';
+import DesignerInfo from './pages/DesingerInfo/DesignerInfo';
 
 type RouteElement = {
   path: string;
@@ -60,6 +61,10 @@ const routes: RouteElement[] = [
         element: <ReviewPhotoGrid />,
       },
     ],
+  },
+  {
+    path: '/:id/designer/:designerId',
+    element: <DesignerInfo />,
   },
 ];
 

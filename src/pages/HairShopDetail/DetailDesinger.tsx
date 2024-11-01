@@ -1,6 +1,6 @@
 import { DetailHeader } from '@/components/Hearder/DetailHeader';
 import { DesignerList } from '@/components/Desinger/DesingerList';
-import { HairshopDetail } from '@/components/Container/HairshopDetail';
+import { HairshopDetail } from '@/components/HarishopDetail/HairshopDetail';
 
 export default function DetailDesinger() {
   return (

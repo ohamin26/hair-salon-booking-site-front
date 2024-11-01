@@ -27,13 +27,14 @@
 }
 
 ::-webkit-scrollbar {
-  width: 4px;
+  width: 20px;
   background: '#inherit';
+  
 }
 
 ::-webkit-scrollbar-thumb {
-  width: 4px;
-  background: '#aaa';
+  width: 10px;
+  background: '#111';
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -1,4 +1,4 @@
-import { HairshopDetail } from '@/components/Container/HairshopDetail';
+import { HairshopDetail } from '@/components/HarishopDetail/HairshopDetail';
 import DetailMenuList from '@/components/DetailMenuList/DetailMenuList';
 import { DetailHeader } from '@/components/Hearder/DetailHeader';
 import MenuHeader from '@/components/Hearder/MenuHeader';
