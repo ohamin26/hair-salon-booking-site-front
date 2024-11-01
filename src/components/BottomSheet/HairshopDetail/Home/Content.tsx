@@ -13,12 +13,11 @@ import { useState } from 'react';
 import { Tap } from './Tap';
 import { TextBox } from './TextBox';
 import { useMapModalState } from '@/stores/useModalState';
-import DetailMapModal from '@/components/Modal/DetailMapModal';
 
 export const Content = () => {
   const [imgWidth, imgHeight] = ['30', '30'];
   const [isExpanded, setIsExpanded] = useState({ notice: false, storeInfo: false });
-  const { isMapModalOpen, mapModalOpen } = useMapModalState();
+  const { mapModalOpen } = useMapModalState();
 
   const handleToggle = (key: string) => {
     setIsExpanded((prev) => ({ ...prev, [key]: true }));
@@ -60,8 +59,6 @@ export const Content = () => {
         <Tap width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
         <Tap width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />
       </div>
-
-      {isMapModalOpen && <DetailMapModal />}
     </div>
   );
 };

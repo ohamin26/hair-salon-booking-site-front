@@ -1,15 +1,18 @@
 import { HairshopDetail } from '@/components/Container/HairshopDetail';
 import { DetailHeader } from '@/components/Hearder/DetailHeader';
+import ReviewModal from '@/components/Modal/ReviewModal';
 import { Paragraph } from '@/components/Paragraph/Paragraph';
 import { ReviewGrid } from '@/components/Review/ReviewGrid';
 import { ReviewList } from '@/components/Review/ReviewList';
 import { reviewData } from '@/mocks/HairshopDetailData';
+import { useReviewModalState } from '@/stores/useModalState';
 
 const rating = 4.9;
 
 export default function DetailReview() {
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
+  const { isReviewModalOpen } = useReviewModalState();
 
   return (
     <HairshopDetail>
@@ -33,6 +36,7 @@ export default function DetailReview() {
         </div>
         <ReviewList reviews={reviewData} />
       </div>
+      {isReviewModalOpen && <ReviewModal />}
     </HairshopDetail>
   );
 }

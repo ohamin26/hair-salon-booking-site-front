@@ -49,12 +49,6 @@ export const Container = () => {
     };
   }, [scrollDelta, api]);
 
-  useEffect(() => {
-    if (isMapModalOpen || isReviewModalOpen) {
-      api.start({ snapPoint: 1.035 });
-    }
-  }, [isMapModalOpen, isReviewModalOpen]);
-
   return (
     <BottomSheet
       open

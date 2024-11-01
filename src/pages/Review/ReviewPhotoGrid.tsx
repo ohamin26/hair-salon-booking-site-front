@@ -1,5 +1,4 @@
 import { CustomImg } from '@/components/Image/CustomImg';
-import ReviewModal from '@/components/Modal/ReviewModal';
 import { useReviewModalState } from '@/stores/useModalState';
 const photos = [
   { id: 1, src: 'https://picsum.photos/320/320' },
@@ -18,7 +17,7 @@ const photos = [
 ];
 
 export default function ReviewPhotoGrid() {
-  const { isReviewModalOpen, reviewModalOpen } = useReviewModalState();
+  const { reviewModalOpen } = useReviewModalState();
   const onClickImg = () => {
     reviewModalOpen();
   };
@@ -29,7 +28,6 @@ export default function ReviewPhotoGrid() {
           <CustomImg src={photo.src} addClassName="h-full w-full object-cover" height={''} width={''} />
         </button>
       ))}
-      {isReviewModalOpen && <ReviewModal />}
     </div>
   );
 }

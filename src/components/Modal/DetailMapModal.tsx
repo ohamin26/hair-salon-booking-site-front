@@ -2,15 +2,13 @@ import { Map, MapMarker } from 'react-kakao-maps-sdk';
 import { CustomImg } from '../Image/CustomImg';
 import { useMapModalState } from '@/stores/useModalState';
 import ModalNavigation from './ModalNavigation';
+import ModalContainer from './ModalContainer';
 
 export default function DetailMapModal() {
   const { mapModalClose } = useMapModalState();
 
   return (
-    <div
-      id="map-modal"
-      className="bg-black fixed inset-0 top-[-30px] z-50 flex items-center justify-center bg-opacity-50"
-    >
+    <ModalContainer>
       <div className="h-full w-full bg-white-default">
         <ModalNavigation
           onClick={mapModalClose}
@@ -28,6 +26,6 @@ export default function DetailMapModal() {
           </div>
         </div>
       </div>
-    </div>
+    </ModalContainer>
   );
 }

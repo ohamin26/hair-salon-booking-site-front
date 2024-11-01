@@ -2,20 +2,17 @@ import { CarouselSettings } from '@/constants/CarouselSetting';
 import { useState } from 'react';
 import Slider from 'react-slick';
 import { reviewData } from '@/mocks/HairshopDetailData';
-import { useLocation } from 'react-router-dom';
 import { useReviewModalState } from '@/stores/useModalState';
 import ModalNavigation from './ModalNavigation';
+import ModalContainer from './ModalContainer';
 
 export default function ReviewModal() {
   const { reviewModalClose } = useReviewModalState();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
-  const location = useLocation();
   const onClickClose = () => {
     reviewModalClose();
   };
-  const top =
-    location.pathname.includes('/review') || location.pathname.includes('infos') ? 'top-[0px]' : 'top-[-30px]';
 
   const onClickInfo = () => {
     setIsInfoOpen(!isInfoOpen);
@@ -34,10 +31,7 @@ export default function ReviewModal() {
   };
 
   return (
-    <div
-      id="carousel-modal"
-      className={`${window.innerWidth > 700 && 'left-0 right-0 mx-auto w-[640px] max-w-default'} bg-black fixed inset-0 top-[-30px] z-50 flex w-full min-w-default flex-col ${top}`}
-    >
+    <ModalContainer>
       <ModalNavigation
         onClick={onClickClose}
         src="/assets/images/icons/icon-close.svg"
@@ -68,6 +62,6 @@ export default function ReviewModal() {
           ))}
         </Slider>
       </div>
-    </div>
+    </ModalContainer>
   );
 }
