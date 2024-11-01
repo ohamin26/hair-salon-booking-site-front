@@ -12,10 +12,13 @@ import {
 import { useState } from 'react';
 import { Tap } from './Tap';
 import { TextBox } from './TextBox';
+import DetailMapModal from '@/components/Map/DetailMap';
+import { useMapModalState } from '@/stores/useModalState';
 
 export const Content = () => {
   const [imgWidth, imgHeight] = ['30', '30'];
   const [isExpanded, setIsExpanded] = useState({ notice: false, storeInfo: false });
+  const { isMapModalOpen, mapModalOpen } = useMapModalState();
 
   const handleToggle = (key: string) => {
     setIsExpanded((prev) => ({ ...prev, [key]: true }));
@@ -46,10 +49,19 @@ export const Content = () => {
 
       <div className="mt-4 flex items-center justify-between text-gray-600">
         <Tap width={imgWidth} height={imgHeight} text={likeCount} src="/assets/images/icons/icon-like.svg" />
-        <Tap width="25" height="23" imgClassName="py-[6px]" text="위치" src="/assets/images/icons/icon-location.svg" />
+        <Tap
+          onClick={() => mapModalOpen()}
+          width="25"
+          height="23"
+          imgClassName="py-[6px]"
+          text="위치"
+          src="/assets/images/icons/icon-location.svg"
+        />
         <Tap width={imgWidth} height={imgHeight} text="전화" src="/assets/images/icons/icon-phone.svg" />
         <Tap width={imgWidth} height={imgHeight} text="공유" src="/assets/images/icons/icon-share.svg" />
       </div>
+
+      {isMapModalOpen && <DetailMapModal />}
     </div>
   );
 };

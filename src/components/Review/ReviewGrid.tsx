@@ -1,4 +1,4 @@
-import { useModalState } from '@/stores/useModalState';
+import { useReviewModalState } from '@/stores/useModalState';
 import { CustomImg } from '../Image/CustomImg';
 import { Link, useParams } from 'react-router-dom';
 
@@ -13,9 +13,9 @@ const images = [
 ];
 
 export const ReviewGrid = (/*{ images }*/) => {
-  const { modalOpen } = useModalState();
+  const { reviewModalOpen } = useReviewModalState();
   const onClickImg = () => {
-    modalOpen();
+    reviewModalOpen();
   };
   const { id } = useParams<{ id: string }>();
   return (

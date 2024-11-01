@@ -1,7 +1,7 @@
 import { Key } from 'react';
 import { CustomImg } from '../Image/CustomImg';
-import Modal from '../Modal/Modal';
-import { useModalState } from '@/stores/useModalState';
+import ReviewModal from '../Modal/ReviewModal';
+import { useReviewModalState } from '@/stores/useModalState';
 
 export const ReviewItem = ({
   title,
@@ -13,9 +13,9 @@ export const ReviewItem = ({
   visitCount,
   name,
 }: ReviewItemProps) => {
-  const { isModalOpen, modalOpen } = useModalState();
+  const { isReviewModalOpen, reviewModalOpen } = useReviewModalState();
   const onClickImg = () => {
-    modalOpen();
+    reviewModalOpen();
   };
   return (
     <div className="mb-4 border-t border-t-white-default pt-4">
@@ -50,7 +50,7 @@ export const ReviewItem = ({
       <div className="mb-2 mt-4 text-sm text-gray-600">
         {name} | {date}일 전 | {visitCount}번째 방문
       </div>
-      {isModalOpen && <Modal />}
+      {isReviewModalOpen && <ReviewModal />}
     </div>
   );
 };

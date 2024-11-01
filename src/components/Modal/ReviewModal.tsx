@@ -1,17 +1,17 @@
 import { CarouselSettings } from '@/constants/CarouselSetting';
-import { useModalState } from '@/stores/useModalState';
 import { useState } from 'react';
 import Slider from 'react-slick';
 import { reviewData } from '@/mocks/HairshopDetailData';
 import { useLocation } from 'react-router-dom';
+import { useReviewModalState } from '@/stores/useModalState';
 
-export default function Modal() {
-  const { modalClose } = useModalState();
+export default function ReviewModal() {
+  const { reviewModalClose } = useReviewModalState();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isInfoOpen, setIsInfoOpen] = useState(false);
   const location = useLocation();
   const onClickClose = () => {
-    modalClose();
+    reviewModalClose();
   };
   const top =
     location.pathname.includes('/review') || location.pathname.includes('infos') ? 'top-[0px]' : 'top-[-30px]';
@@ -42,7 +42,6 @@ export default function Modal() {
           onClick={onClickClose}
           type="button"
           className="absolute left-4 inline-flex h-6 w-6 items-center text-black-default"
-          aria-label="모달 닫기"
         >
           <img src="/assets/images/icons/icon-close.svg" alt="모달 닫기" />
         </button>

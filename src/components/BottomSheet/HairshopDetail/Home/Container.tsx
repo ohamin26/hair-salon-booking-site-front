@@ -8,8 +8,8 @@ import { getSnapPoint } from '@/utils/getSnapPoint';
 import { PickMenu } from '@/components/PickMenu/PickMenu';
 import { DesingerHome } from '@/components/Desinger/DesingerHome';
 import { ReviewHome } from '@/components/Review/ReviewHome';
-import { useModalState } from '@/stores/useModalState';
 import ReservationButton from '@/components/Button/ReservationButton';
+import { useMapModalState, useReviewModalState } from '@/stores/useModalState';
 
 export const Container = () => {
   const [scrollDelta, setScrollDelta] = useState(0);
@@ -18,7 +18,8 @@ export const Container = () => {
     config: { tension: 170, friction: 26 },
   }));
   const [isActiveScroll, setIsActiveScroll] = useState(false);
-  const { isModalOpen } = useModalState();
+  const { isReviewModalOpen } = useReviewModalState();
+  const { isMapModalOpen } = useMapModalState();
   const handleScroll = (event: WheelEvent) => {
     setScrollDelta((prevDelta) => prevDelta + event.deltaY);
     if (window.innerHeight / springs.snapPoint.get() >= 698 || window.innerWidth < 600) {
@@ -34,7 +35,7 @@ export const Container = () => {
     const handleSnapPoint = () => {
       const screenWidth = window.innerWidth;
       const snapPoint = getSnapPoint(scrollDelta, screenWidth);
-      isModalOpen ? api.start({ snapPoint: 1.035 }) : api.start({ snapPoint });
+      isReviewModalOpen || isMapModalOpen ? api.start({ snapPoint: 1.035 }) : api.start({ snapPoint });
     };
 
     window.addEventListener('resize', handleSnapPoint);
@@ -47,6 +48,12 @@ export const Container = () => {
       window.removeEventListener('wheel', handleScroll);
     };
   }, [scrollDelta, api]);
+
+  useEffect(() => {
+    if (isMapModalOpen || isReviewModalOpen) {
+      api.start({ snapPoint: 1.035 });
+    }
+  }, [isMapModalOpen, isReviewModalOpen]);
 
   return (
     <BottomSheet

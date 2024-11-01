@@ -7,11 +7,12 @@ type MenuProps = {
   text: string;
   src: string;
   imgClassName?: string;
+  onClick?: () => void;
 };
 
-export const Tap = ({ width, height, text, src, imgClassName }: MenuProps) => {
+export const Tap = ({ width, height, text, src, imgClassName, onClick }: MenuProps) => {
   return (
-    <button type="button" className="flex w-full flex-col items-center p-8 py-4">
+    <button onClick={onClick} type="button" className="flex w-full flex-col items-center p-8 py-4">
       <div className={twMerge(`${imgClassName}`)}>
         <CustomImg src={src} height={height} width={width} />
       </div>

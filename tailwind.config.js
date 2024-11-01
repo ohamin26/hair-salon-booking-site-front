@@ -45,7 +45,7 @@ export default {
           '200': '#a0ead5',
         },
         white: {
-          default: '#f8f4ff',
+          default: '#fff',
         },
         black: {
           '100': '#555',
@@ -56,7 +56,7 @@ export default {
           '200': '#ccc',
           '300': '#aaa',
           '400': '#888',
-          'input-bg' : '#f5f5f5'
+          'input-bg': '#f5f5f5',
         },
       },
     },
