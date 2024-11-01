@@ -12,8 +12,8 @@ import {
 import { useState } from 'react';
 import { Tap } from './Tap';
 import { TextBox } from './TextBox';
-import DetailMapModal from '@/components/Map/DetailMap';
 import { useMapModalState } from '@/stores/useModalState';
+import DetailMapModal from '@/components/Modal/DetailMapModal';
 
 export const Content = () => {
   const [imgWidth, imgHeight] = ['30', '30'];
